@@ -1,0 +1,35 @@
+pipeline:
+  name: LambdaZipall
+  identifier: LambdaZipall
+  projectIdentifier: Test
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: github
+        repoName: newLambdatestingcode
+        build: <+input>
+  stages:
+    - stage:
+        name: Clone
+        identifier: Clone
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: CompressFile
+                  identifier: CompressFile
+                  spec:
+                    shell: Sh
+                    command: zip -r lambda.zip lambda/
