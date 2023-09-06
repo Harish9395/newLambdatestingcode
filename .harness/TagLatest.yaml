@@ -1,0 +1,15 @@
+inputSet:
+  name: TagLatest
+  identifier: TagLatest
+  orgIdentifier: default
+  projectIdentifier: Test
+  pipeline:
+    identifier: LambdaZipall
+    properties:
+      ci:
+        codebase:
+          build:
+            type: tag
+            spec:
+              tag: <+trigger.tag>
+  object Object: pipeline.properties.ci.codebase
