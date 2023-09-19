@@ -1,0 +1,45 @@
+pipeline:
+  name: UploadtoS3
+  identifier: UploadtoS3
+  projectIdentifier: Test
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: github
+        repoName: newLambdatestingcode
+        build: <+input>
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: CompressFile
+                  identifier: CompressFile
+                  spec:
+                    shell: Sh
+                    command: |
+                      #!/bin/sh
+
+                      echo "Current File Location"
+                      pwd
+                      echo "show the all files and folder"
+                      echo "codebase tag <+codebase.tag>"
+                      ls
+                      zip -r <codebase.tag>.zip src 
+                      pwd
+                      ls
