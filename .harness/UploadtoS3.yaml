@@ -41,7 +41,7 @@ pipeline:
                       echo "codebase tag <+codebase.tag>"
                       ls
                       ls /harness/
-                      zip -r <+codebase.tag>.zip harness/newLambdatestingcode/ 
+                      zip -r <+codebase.tag>.zip .
                       pwd
                       ls
               - step:
