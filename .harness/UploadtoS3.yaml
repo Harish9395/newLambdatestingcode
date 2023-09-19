@@ -40,7 +40,7 @@ pipeline:
                       echo "show the all files and folder"
                       echo "codebase tag <+codebase.tag>"
                       ls
-                      zip -r <+codebase.tag>.zip ewLambdatestingcode/ 
+                      zip -r <+codebase.tag>.zip newLambdatestingcode/ 
                       pwd
                       ls
               - step:
