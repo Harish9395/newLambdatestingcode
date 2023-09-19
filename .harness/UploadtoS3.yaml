@@ -43,3 +43,9 @@ pipeline:
                       zip -r <codebase.tag>.zip src 
                       pwd
                       ls
+  variables:
+    - name: ARTIFACT_TAG
+      type: String
+      description: GithubTag
+      required: false
+      value: "<+codebase.tag> "
