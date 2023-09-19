@@ -40,7 +40,7 @@ pipeline:
                       echo "show the all files and folder"
                       echo "codebase tag <+codebase.tag>"
                       ls
-                      zip -r <+codebase.tag>.zip lambda/ 
+                      zip -r <+codebase.tag>.zip ewLambdatestingcode/ 
                       pwd
                       ls
               - step:
@@ -52,7 +52,7 @@ pipeline:
                     command: |-
                       aws configure set aws_access_key_id AKIA5U3R675QNZZ2AJET
                       aws configure set aws_secret_access_key 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
-                      aws s3 cp 1.0.0.zip s3://mycloudformationtemp3234/1.0.0.zip 
+                      aws s3 cp 1.0.0.zip s3://mycloudformationtemp3234/apitest.zip 
   variables:
     - name: ARTIFACT_TAG
       type: String
