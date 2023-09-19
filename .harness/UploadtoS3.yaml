@@ -40,7 +40,7 @@ pipeline:
                       echo "show the all files and folder"
                       echo "codebase tag <+codebase.tag>"
                       ls
-                      zip -r <+codebase.tag>.zip src 
+                      zip -9 <+codebase.tag>.zip src 
                       pwd
                       ls
   variables:
