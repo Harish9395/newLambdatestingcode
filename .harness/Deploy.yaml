@@ -1,0 +1,15 @@
+inputSet:
+  name: Deploy
+  identifier: Deploy
+  orgIdentifier: default
+  projectIdentifier: Test
+  pipeline:
+    identifier: UploadtoS3
+    properties:
+      ci:
+        codebase:
+          build:
+            type: tag
+            spec:
+              tag: <+codebase.tag>
+  object Object: pipeline.properties.ci.codebase
