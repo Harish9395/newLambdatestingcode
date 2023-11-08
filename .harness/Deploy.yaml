@@ -1,5 +1,6 @@
 inputSet:
   name: Deploy
+  tags: {}
   identifier: Deploy
   orgIdentifier: default
   projectIdentifier: Test
@@ -11,5 +12,4 @@ inputSet:
           build:
             type: tag
             spec:
-              tag: <+codebase.tag>
-  object Object: pipeline.properties.ci.codebase
+              tag: <trigger.tag>
